@@ -24,7 +24,7 @@ class Audio_To_Text:
 		self.model = whisper.load_model(model_type)
 		text = self.transcribe(audio_file, self.audio_data_path, model = self.model)
 
-		self.save_text(text, audio_file.split('.')[0] + '_' + language + '.pkl', self.text_data_path)
+		self.save_text(text['text'].lower(), audio_file.split('.')[0] + '_' + language + '.pkl', self.text_data_path)
 
 	def transcribe(self, audio_file, audio_data_path, model = 'tiny.en'):
 		return model.transcribe(os.path.join(audio_data_path, audio_file))

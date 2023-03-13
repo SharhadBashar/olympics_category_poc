@@ -7,10 +7,25 @@ class Category:
         self.category_data_path = '../data/words/'
         
         text = self.load_file(self.text_data_path, text_file)
-        words = self.load_file(self.category_data_path, 'olympics_' + language + '.txt')
+        words = self.load_file(self.category_data_path, 'olympics_' + language + '.txt', type = 'txt')
         
-    def load_file(self, folder, file):
-        return set(pickle.load(open(os.path.join(folder, file), 'rb')))
+        check_category = self.check_category(text, words)
+        print()
+        if check_category:
+            print('This is an olympics podcast')
+        else:
+            print('This is not olympics podcast')
+        print()
+        
+    def load_file(self, folder, file, type = 'pkl'):
+        if (type == 'pkl'):
+            return pickle.load(open(os.path.join(folder, file), 'rb'))
+        else:
+            with open(os.path.join(folder, file)) as file:
+                words = [line.rstrip().lower() for line in file]  
+            file.close()
+            words = set(words)
+            return words
     
     def check_category(self, text, words):
         for word in words:
