@@ -12,9 +12,9 @@ class Category:
         check_category = self.check_category(text, words)
         print()
         if check_category:
-            print('This is an olympics podcast')
+            print('This IS an olympics podcast')
         else:
-            print('This is not olympics podcast')
+            print('This is NOT an olympics podcast')
         print()
         
     def load_file(self, folder, file, type = 'pkl'):

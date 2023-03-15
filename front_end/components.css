@@ -1,0 +1,89 @@
+.text {
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-left: 80px;
+}
+
+.drop {
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-bottom: 20px;
+}
+.drop-zone {
+  max-width: 500px;
+  height: 50px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed #009578;
+  border-radius: 10px;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+#input-container{
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-left: 80px;
+  position:relative;
+  margin-bottom:25px;
+}
+#input-container label{
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-left: 80px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:16px;
+    pointer-event:none;
+  transition: all 0.5s ease-in-out;
+}
+#input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:500px;
+  padding:8px 0 5px 0;
+  font-size:16px;
+}
+
+#input-container input:focus{ 
+ border:none; 
+ outline:none;
+ border-bottom:1px solid; 
+}
+
+#input-container input:focus ~ label,
+#input-container input:valid ~ label{
+  top:-12px;
+  font-size:12px;
+}
+
+.btn{
+  padding-top: 10px !important;
+  color:#fff;
+  background-color:#e74c3c;
+  outline: none;
+    border: 0;
+    color: #fff;
+  padding:10px 20px;
+  text-transform:uppercase;
+  border-radius:2px;
+  cursor:pointer;
+  position:relative;
+}
+
+#result {
+  width: 100%;
+  text-align: left;
+}

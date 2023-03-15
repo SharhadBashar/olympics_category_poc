@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Custom Categories</title>
+		<meta name="description" content="use whisper to find custom categories in podcasts">
+
+		<link rel = "stylesheet" type = "text/css" href = "./components.css"/>
+	</head>
+	<body>
+		<div class="text">
+			<h1>Welcome to Custom Category Detection in Pocasts using <em>WHISPER</em>...</h1>
+			<h3>Please follow the steps below to find out if your podcast has the custom category:</h3>
+				<li>In the text box type the custom category</li>
+				<li>In the first box upload the text file with the list of words</li>
+				<li>In the second box upload the podcast audio file</li>
+				<li>Once uploaded, click the Analyze button</li>
+		</div>
+		
+		<div id="input-container">
+			<input type="text" id="category" required="Yes"/>
+			<label>Custom Category</label>		
+		</div>
+		
+		<div class="drop">
+			<div class="drop-zone">
+				<span class="drop-zone__prompt">Drop or click here to upload text file</span>
+				<input type="file" name="myFile" class="drop-zone__input">
+			</div>
+		</div>
+		<div class="drop">
+			<div class="drop-zone">
+				<span class="drop-zone__prompt">Drop or click here to upload audio file</span>
+				<input type="file" name="myFile" class="drop-zone__input">
+			</div>
+		</div>
+		<div class="text">
+	  		<button type="button" class="btn" onclick="getResult()">Analyze</button>
+	  	</div>
+	  	<div class="text">
+	  		<label id="result"></label>
+		</div>
+	</body>
+
+	<script>
+		function getResult() {
+			var category = document.getElementById("category")
+			var resultLabel = document.getElementById("result");
+		 	resultLabel.innerHTML = "This IS a " + category.value + " podcast";
+		}
+	</script>
+</html>
